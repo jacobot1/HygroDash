@@ -12,7 +12,7 @@ namespace HygroDash
         // Mod metadata
         public const string modGUID = "jacobot5.HygroDash";
         public const string modName = "HygroDash";
-        public const string modVersion = "1.0.0";
+        public const string modVersion = "1.1.0";
 
         // Initalize Harmony
         private readonly Harmony harmony = new Harmony(modGUID);
@@ -47,6 +47,7 @@ namespace HygroDash
             // Do the patching
             harmony.PatchAll(typeof(HygroDashMod));
             harmony.PatchAll(typeof(BlobAIPatch));
+            harmony.PatchAll(typeof(KickIfModNotInstalled));
         }
     }
 }
